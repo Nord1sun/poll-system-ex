@@ -1,0 +1,26 @@
+# For detailed explanation of how these config files should be used and created please see the developer guide here:
+#  http://docs.amazonwebservices.com/AWSToolkitVS/latest/UserGuide/tkv-deployment-tool.html
+
+# Edit the parameter line below to set the path to the deployment archive or use
+#     /DDeploymentPackage=value
+# on the awsdeploy.exe command line for more flexibility.
+# DeploymentPackage = <-- path to web deployment archive -->
+
+# Profile name is used to look up AWS access key and secret key
+# from either the SDK credentials store, or the credentials file found at
+# <userhome-directroy>\.aws\credentials. Alternatively the access key and 
+# secret key can be set using the command line parameters /DAWSAccessKey and /DAWSSecretKey.
+AWSProfileName = default
+Region = eu-central-1
+SolutionStack = 64bit Windows Server 2016 v2.0.1 running IIS 10.0
+Template = ElasticBeanstalk
+
+Application.Name = iessapi
+
+Container.Enable32BitApplications = False
+Container.InstanceType = t2.micro
+Container.TargetRuntime = 4.0
+
+Environment.CNAME = iessapi-dev.eu-central-1
+Environment.Name = iessapi-dev
+
